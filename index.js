@@ -11,9 +11,7 @@ import { corsOptions, credentials, logError, logSuccess } from "./middleware.js"
 import v0Router from "./app/v0/router.js";
 import v1Router from "./app/v1/router.js";
 import v2Router from "./app/v2/router.js";
-// import v3Router from "./v3/router.js";
-// import v4Router from "./v4/router.js";
-// import v5Router from "./v5/router.js";
+import v3Router from "./app/v3/router.js";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -51,9 +49,7 @@ app.get("/", (req, res) => {
 app.use("/api-mongoose/v0", v0Router);
 app.use("/api-mongoose/v1", v1Router);
 app.use("/api-mongoose/v2", v2Router);
-// app.use("/api-mongoose/v3", v3Router);
-// app.use("/api-mongoose/v4", v4Router);
-// app.use("/api-mongoose/v5", v5Router);
+app.use("/api-mongoose/v3", v3Router);
 
 // ------ route ------
 
